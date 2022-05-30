@@ -5,6 +5,7 @@ const nextConfig = {
 }
 
 const { withExpo } = require('@expo/next-adapter')
+const withFonts = require('next-fonts')
 const withPlugins = require('next-compose-plugins')
 const withTM = require('next-transpile-modules')([
   'solito',
@@ -14,9 +15,17 @@ const withTM = require('next-transpile-modules')([
   '@motify/core',
   '@motify/components',
   'app',
+  'react-native-web',
+  'react-native-svg',
+  'native-base',
+  'react-native-svg',
 ])
 
 module.exports = withPlugins(
-  [withTM, [withExpo, { projectRoot: __dirname }]],
+  [
+    withTM,
+    [withFonts, { projectRoot: __dirname }],
+    [withExpo, { projectRoot: __dirname }],
+  ],
   nextConfig
 )
