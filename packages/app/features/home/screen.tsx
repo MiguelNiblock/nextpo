@@ -1,6 +1,7 @@
 import { Text, useSx, View, H1, P, Row, A } from 'dripsy'
 import { TextLink } from 'solito/link'
 import { MotiLink } from 'solito/moti'
+import { Box } from 'native-base'
 
 export function HomeScreen() {
   const sx = useSx()
@@ -9,6 +10,7 @@ export function HomeScreen() {
     <View
       sx={{ flex: 1, justifyContent: 'center', alignItems: 'center', p: 16 }}
     >
+      <Box>Hello from native-base</Box>
       <H1 sx={{ fontWeight: '800' }}>Welcome to Solito.</H1>
       <View sx={{ maxWidth: 600 }}>
         <P sx={{ textAlign: 'center' }}>
